@@ -14,6 +14,14 @@ const transactions = require('./routes/transactions');
 
 const app = express();
 
+app.use(cors(
+  {
+    origin: [""],
+    methods: ["GET", "POST", "DELETE"],
+    credentials:true
+  }
+));
+
 app.use(express.json());
 
 if(process.env.NODE_ENV === 'development') {
