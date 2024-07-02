@@ -15,9 +15,17 @@ const transactions = require('./routes/transactions');
 
 const app = express();
 
+const allowedOrigins = ['https://mern-expense-tracker-frontend-eight.vercel.app', 'https://another-allowed-origin.com'];
+
 app.use(cors(
   {
-    origin: ["https://mern-expense-tracker-frontend-eight.vercel.app"],
+    origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
     methods: ["GET", "POST", "DELETE"],
     credentials:true
   }
