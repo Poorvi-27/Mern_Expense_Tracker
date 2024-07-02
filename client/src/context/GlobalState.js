@@ -22,12 +22,12 @@ async function getTransactions() {
 
         dispatch({
         type: 'GET_TRANSACTIONS',
-        payload: res.data.data
+        payload: res
         });
     } catch (err) {
         dispatch({
         type: 'TRANSACTION_ERROR',
-        payload: err.response.data.error
+        payload: err
         });
     }
 }
@@ -43,7 +43,7 @@ async function deleteTransaction(id) {
     } catch (err) {
       dispatch({
         type: 'TRANSACTION_ERROR',
-        payload: err.response.data.error
+        payload: err
       });
     }
   }
@@ -60,12 +60,12 @@ async function deleteTransaction(id) {
 
       dispatch({
         type: 'ADD_TRANSACTION',
-        payload: res.data.data
+        payload: res
       });
     } catch (err) {
       dispatch({
         type: 'TRANSACTION_ERROR',
-        payload: err.response.data.error
+        payload: err
       });
     }
   }
