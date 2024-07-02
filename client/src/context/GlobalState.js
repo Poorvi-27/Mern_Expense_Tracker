@@ -18,7 +18,7 @@ export const GlobalProvider = ({ children }) => {
 
 async function getTransactions() {
     try {
-        const res = await axios.get('https://mern-expense-tracker-puce.vercel.app/');
+        const res = await axios.get('https://mern-expense-tracker-puce.vercel.app');
 
         dispatch({
         type: 'GET_TRANSACTIONS',
@@ -56,7 +56,7 @@ async function deleteTransaction(id) {
     }
 
     try {
-      const res = await axios.post('https://mern-expense-tracker-puce.vercel.app/', transaction, config);
+      const res = await axios.post('https://mern-expense-tracker-puce.vercel.app', transaction, config);
 
       dispatch({
         type: 'ADD_TRANSACTION',
