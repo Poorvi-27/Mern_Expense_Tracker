@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: [""],
+    origin: ["https://mern-expense-tracker-frontend-eight.vercel.app"],
     methods: ["GET", "POST", "DELETE"],
     credentials:true
   }
