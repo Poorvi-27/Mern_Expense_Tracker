@@ -12,3 +12,4 @@ root.render(
 
 // ReactDOM.render(<App />,document.getElementById('root'));
 
+// "proxy": "http://localhost:5000"
